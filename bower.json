@@ -1,0 +1,21 @@
+{
+  "name": "Larissa",
+  "authors": [
+    "Leandro Magalhaes <le.fatecpd@gmail.com>>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://github.com/lmagalhaes/larissa",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.3"
+  }
+}
