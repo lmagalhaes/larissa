@@ -40,8 +40,10 @@ app.controller('AppController', function($scope){
     };
 
     playSound = function (sound) {
-        sounds[sound].currentTime = 0;
-        sounds[sound].play();
+        if (!$scope.muteSound) {
+            sounds[sound].currentTime = 0;
+            sounds[sound].play();
+        }
     };
 
     $scope.evaluate = function(evaluateTo) {
