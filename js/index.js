@@ -6,9 +6,14 @@ app.controller('AppController', function($scope){
 
     var getRandomInt,
         changeLetter,
+        playSound,
         vowels = ['a', 'e', 'i', 'o', 'u', 'y'],
         consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'z'],
-        allLetters = vowels.concat(consonants).sort();
+        allLetters = vowels.concat(consonants).sort(),
+        sounds = {
+            correct: new Audio("sounds/smb_coin.wav"),
+            incorrect: new Audio("sounds/smb_bump.wav")
+        };
 
     $scope.score = {
         correct: 0,
@@ -34,14 +39,21 @@ app.controller('AppController', function($scope){
         $scope.letter = letter;
     };
 
+    playSound = function (sound) {
+        sounds[sound].currentTime = 0;
+        sounds[sound].play();
+    };
+
     $scope.evaluate = function(evaluateTo) {
         if( typeof evaluateTo != "undefined") {
+            playSound(evaluateTo);
             $scope.score[evaluateTo] += 1;
             $scope.score.total += 1;
         }
         changeLetter();
     };
     changeLetter();
+
 });
 
 
