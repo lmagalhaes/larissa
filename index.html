@@ -7,10 +7,14 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/directives/card.js"></script>
+    <script src="js/directives/scores.js"></script>
 </head>
 
 <body data-ng-controller="AppController">
+    <scores data-score="score"></scores>
     <card data-letter="letter"></card>
-    <button data-ng-click="evaluate();">Next</button>
+
+    <button data-ng-click="evaluate('correct');" class="button green">Correct</button>
+    <button data-ng-click="evaluate('incorrect');" class="button red">Incorrect</button>
 </body>
 </html>

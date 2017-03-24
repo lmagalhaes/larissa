@@ -10,6 +10,12 @@ app.controller('AppController', function($scope){
         consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'z'],
         allLetters = vowels.concat(consonants).sort();
 
+    $scope.score = {
+        correct: 0,
+        incorrect: 0,
+        total: 0
+    };
+
     getRandomInt = function (min, max) {
         var min = Math.ceil(min),
             max = Math.floor(max);
@@ -28,11 +34,14 @@ app.controller('AppController', function($scope){
         $scope.letter = letter;
     };
 
-    $scope.evaluate = function() {
+    $scope.evaluate = function(evaluateTo) {
+        if( typeof evaluateTo != "undefined") {
+            $scope.score[evaluateTo] += 1;
+            $scope.score.total += 1;
+        }
         changeLetter();
     };
     changeLetter();
-
 });
 
 
