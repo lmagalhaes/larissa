@@ -8,6 +8,9 @@
     <script src="js/index.js"></script>
     <script src="js/directives/card.js"></script>
     <script src="js/directives/scores.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body data-ng-controller="AppController">
@@ -15,7 +18,7 @@
     <scores data-score="score"></scores>
     <card data-letter="letter"></card>
 
-    <button data-ng-click="evaluate('correct');" class="button green">Correct</button>
-    <button data-ng-click="evaluate('incorrect');" class="button red">Incorrect</button>
+    <button class="btn btn-success" data-ng-click="evaluate('correct');">Correct</button>
+    <button class="btn btn-danger" data-ng-click="evaluate('incorrect');">Incorrect</button>
 </body>
 </html>
